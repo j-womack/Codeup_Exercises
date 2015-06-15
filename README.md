@@ -2,4 +2,4 @@
 
 This is my repository of Codeup exercises.
 
-Testing, testing, 1, 2, 3.
+This is where I'll post code. 
