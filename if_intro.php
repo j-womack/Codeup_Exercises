@@ -68,7 +68,7 @@ if ($b === $c) {
 } elseif ($b !== $c) {
     // output the appropriate result
     echo "$b is not identical to $c\n";
-} else ($b != $c) {
+} else {
     // output the appropriate result
     echo "$b is not equal to $c\n";
 } 
