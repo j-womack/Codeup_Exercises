@@ -59,22 +59,18 @@ if ($b >= $c) {
 } else {
     echo "$b is less than or equal to $c\n";
 }
-
-if ($b == $c) {
+if ($b === $c) {
+    // output the appropriate result
+    echo "$b is identical to $c\n";
+} elseif ($b == $c) {
     // output the appropriate result
     echo "$b is equal to $c\n";
-} elseif ($b === $c) {
-    // output the appropriate result
-    echo "$b is equal in value and data type to $c\n";
-} elseif ($b != $c) {
-    // output the appropriate result
-    echo "$b is not equal to $c\n";
 } elseif ($b !== $c) {
     // output the appropriate result
     echo "$b is not identical to $c\n";
-}
-
-
-
+} else ($b != $c) {
+    // output the appropriate result
+    echo "$b is not equal to $c\n";
+} 
 
 ?>
