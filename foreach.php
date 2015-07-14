@@ -4,6 +4,16 @@ $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, 
 
 foreach($things as $thing) {
 
+echo PHP_EOL;
+
+    if (is_scalar($thing)) {
+        if ($thing == false) {
+            echo "false is a scalar" . PHP_EOL;
+        } else {
+            echo "$thing is a scalar" . PHP_EOL;
+        }
+    }
+
     if (is_int($thing)) {
         echo "$thing is an integer" . PHP_EOL;
     } elseif (is_float($thing)) {
@@ -24,5 +34,7 @@ foreach($things as $thing) {
         echo "$thing is a string" . PHP_EOL;
     }
 };
+
+echo PHP_EOL;
 
 ?>
