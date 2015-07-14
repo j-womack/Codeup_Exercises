@@ -17,8 +17,24 @@ if ($lowerBound >= $upperBound){
     $lowerBound = $lowerBound - $upperBound;
 }
 
+//          With a For loop
 
-for ($i = $lowerBound; $i <= $upperBound; $i++) {
+// for ($i = $lowerBound; $i <= $upperBound; $i++) {
+//     if (($i % 3 == 0) && ($i % 5 == 0)) {
+//         echo "Fizz Buzz" . PHP_EOL;
+//     } elseif ($i % 3 == 0) {
+//         echo "Fizz" . PHP_EOL;
+//     } elseif ($i % 5 == 0) {
+//         echo "Buzz" . PHP_EOL;
+//     } else {
+//         echo "$i" . PHP_EOL;
+//     }
+// }
+
+//          With a While loop
+
+$i = $lowerBound;
+while ($i <= $upperBound){
     if (($i % 3 == 0) && ($i % 5 == 0)) {
         echo "Fizz Buzz" . PHP_EOL;
     } elseif ($i % 3 == 0) {
@@ -28,6 +44,8 @@ for ($i = $lowerBound; $i <= $upperBound; $i++) {
     } else {
         echo "$i" . PHP_EOL;
     }
+    $i++;
 }
+
 
 ?>
