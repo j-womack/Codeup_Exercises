@@ -42,6 +42,118 @@
 // The prime factors of 13195 are 5, 7, 13 and 29.
 // What is the largest prime factor of the number 600851475143 ?
 
+// $n = 600851475143;
+// $array = [];
+
+// function pfactor($n){
+//     // max_n = 2^31-1 = 2147483647
+//     $d=2;
+//     $factors = array();
+//     $dmax = floor(sqrt($n));
+//     $sieve = array();
+//     $sieve = array_fill(1, $dmax,1);
+//     do{
+//         $r = false;
+//         while ($n%$d==0){
+//             $factors[$d]++;
+//             $n/=$d;
+//             $r = true;
+//         }
+//         if ($r){
+//             $dmax = floor(sqrt($n));
+//         }
+//         if ($n>1){
+//             for ($i=$d;$i<=$dmax;$i+=$d){
+//                 $sieve[$i]=0;
+//             }
+//             do{
+//                 $d++;
+//             }while ($sieve[$d]!=1 && $d<$dmax);
+//             if ($d>$dmax){
+//                 $factors[$n]++;
+//             }
+//         }
+//     }while($n>1 && $d<=$dmax);
+//     return $factors;
+// }
+
+// print_r(pfactor($n));
+
+
+// 004
+// A palindromic number reads the same both ways. 
+// The largest palindrome made from the product of 
+// two 2-digit numbers is 9009 = 91 × 99.
+
+// Find the largest palindrome made from the product 
+// of two 3-digit numbers.
+
+// $array = [];
+
+// for ($i = 500; $i < 1000; $i++){
+//     for ($j = 500; $j < 1000; $j++){
+//         $palindrome = $i * $j;
+//         $test = str_split(strval($palindrome), 1);
+//         if ($test[0] == $test[5] && $test[1] == $test[4] && $test[2] == $test[3]) {
+//             array_push($array, $palindrome);
+//         }
+//     }
+// }
+
+// print_r(max($array));
+
+
+
+// 005
+// 2520 is the smallest number that can be divided by 
+// each of the numbers from 1 to 10 without any remainder.
+
+// What is the smallest positive number that is evenly 
+// divisible by all of the numbers from 1 to 20?
+
+ // $n = 2520;
+
+ // do {
+ //    $n++;
+ //    // echo $n;
+ //    if ($n % 11 == 0
+ //        && $n % 12 == 0
+ //        && $n % 13 == 0
+ //        && $n % 14 == 0
+ //        && $n % 15 == 0
+ //        && $n % 16 == 0
+ //        && $n % 17 == 0
+ //        && $n % 18 == 0
+ //        && $n % 19 == 0
+ //        && $n % 20 == 0) {
+ //        echo $n;
+ //    }
+ // } while ($n < 1000000000)
+
+
+
+
+// 006
+// The sum of the squares of the first ten natural 
+// numbers is,
+// 1^2 + 2^2 + ... + 10^2 = 385
+
+// The square of the sum of the first ten natural 
+// numbers is,
+// (1 + 2 + ... + 10)^2 = 552 = 3025
+
+// Hence the difference between the sum of the 
+// squares of the first ten natural numbers and 
+// the square of the sum is 3025 − 385 = 2640.
+
+// Find the difference between the sum of the squares 
+// of the first one hundred natural numbers and the 
+// square of the sum.
+
+
+
+
+
 
 
 ?>
