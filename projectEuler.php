@@ -150,8 +150,45 @@
 // of the first one hundred natural numbers and the 
 // square of the sum.
 
+// $sumSquare = 0;
+// $sum = 0;
+
+// for ($i = 1; $i <=100; $i++){
+//     $number = $i * $i;
+//     $sumSquare += $number;
+// }
+
+// for ($i = 1; $i <=100; $i++){
+//     $sum += $i;
+// }
+
+// echo ($sum * $sum) - $sumSquare;
 
 
+
+
+// 007
+// By listing the first six prime numbers: 
+// 2, 3, 5, 7, 11, and 13, 
+// we can see that the 6th prime is 13.
+
+// What is the 10001st prime number?
+
+// $primes = array();
+
+// $x = 2;
+// do {
+//     $xIsPrime = TRUE;
+//     $sqrtX = sqrt($x);
+//     foreach ($primes as $prime) if ($prime > $sqrtX || ((!($x % $prime)) && (!$xIsPrime = FALSE))) break;
+//     if ($xIsPrime){
+//         $primes[] = $x;
+//         // print_r($primes);
+//     }
+//     $x++;
+// } while (count($primes) <= 10000);
+
+// print_r($primes);
 
 
 
