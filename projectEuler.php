@@ -116,17 +116,26 @@
  // do {
  //    $n++;
  //    // echo $n;
- //    if ($n % 11 == 0
- //        && $n % 12 == 0
- //        && $n % 13 == 0
- //        && $n % 14 == 0
- //        && $n % 15 == 0
- //        && $n % 16 == 0
- //        && $n % 17 == 0
- //        && $n % 18 == 0
- //        && $n % 19 == 0
- //        && $n % 20 == 0) {
- //        echo $n;
+ //    if ($n % 11 == 0){
+ //        if ($n % 12 == 0){
+ //            if ($n % 13 == 0) {
+ //                if ($n % 14 == 0){   
+ //                    if ($n % 15 == 0){
+ //                        if ($n % 16 == 0) {
+ //                            if ($n % 17 == 0) {
+ //                                if ($n % 18 == 0) {
+ //                                    if ($n % 19 == 0) {
+ //                                        if ($n % 20 == 0) {   
+ //                                        echo $n;
+ //                                        }
+ //                                    }
+ //                                }
+ //                            }
+ //                        }
+ //                    }
+ //                }
+ //            }
+ //        }
  //    }
  // } while ($n < 1000000000)
 
@@ -299,21 +308,21 @@
 
 // Find the sum of all the primes below two million.
 
-$primes = array();
+// $primes = array();
 
-$x = 2;
-do {
-    $xIsPrime = TRUE;
-    $sqrtX = sqrt($x);
-    foreach ($primes as $prime) if ($prime > $sqrtX || ((!($x % $prime)) && (!$xIsPrime = FALSE))) break;
-    if ($xIsPrime){
-        $primes[] = $x;
-        // print_r($primes);
-    }
-    $x++;
-} while (end($primes) <= 1999992);
+// $x = 2;
+// do {
+//     $xIsPrime = TRUE;
+//     $sqrtX = sqrt($x);
+//     foreach ($primes as $prime) if ($prime > $sqrtX || ((!($x % $prime)) && (!$xIsPrime = FALSE))) break;
+//     if ($xIsPrime){
+//         $primes[] = $x;
+//         // print_r($primes);
+//     }
+//     $x++;
+// } while (end($primes) <= 1999992);
 
-echo array_sum($primes) . PHP_EOL;
+// echo array_sum($primes) . PHP_EOL;
 
 
 
