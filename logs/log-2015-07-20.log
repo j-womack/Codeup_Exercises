@@ -1,0 +1,22 @@
+2015-07-20   09:42:47   [INFO] This is an info message.
+2015-07-20   09:42:47   [ERROR] This is an error message.
+2015-07-20   09:43:14   [INFO] This is an info message.
+2015-07-20   09:43:14   [ERROR] This is an error message.
+2015-07-20   09:43:54   [INFO] This is an info message.
+2015-07-20   09:43:54   [ERROR] This is an error message.
+2015-07-20   09:46:17   [INFO] This is an info message.
+2015-07-20   09:46:17   [ERROR] This is an error message.
+2015-07-20   09:57:38   [INFO] This is an info message.
+2015-07-20   09:57:38   [ERROR] This is an error message.
+2015-07-20   10:38:53   [INFO] This is an info message.
+2015-07-20   10:38:53   [ERROR] This is an error message.
+2015-07-20   10:39:33   [INFO] This is an info message.
+2015-07-20   10:39:33   [ERROR] This is an error message.
+2015-07-20   10:53:02   [INFO] This is an info message.
+2015-07-20   10:53:02   [ERROR] This is an error message.
+2015-07-20   10:53:02   [INFO] Here's some info that I'm logging
+2015-07-20   10:53:02   [ERROR] Here's an error!
+2015-07-20   11:11:32   [INFO] This is an info message.
+2015-07-20   11:11:32   [ERROR] This is an error message.
+2015-07-20   11:11:32   [INFO] Here's some info that I'm logging
+2015-07-20   11:11:32   [ERROR] Here's an error!
