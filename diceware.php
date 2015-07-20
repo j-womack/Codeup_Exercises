@@ -4,17 +4,16 @@ function diceware($number) {
     $filename = 'diceware.txt';
     $handle = fopen( $filename, 'r');
     $contents = trim(fread($handle, filesize($filename)));
+    fclose($handle);
 
     $contentArray = explode(PHP_EOL, $contents);
+
     foreach ($contentArray as $key => $line) {
         $line = explode(' ', $line);
-        // print_r($line);
         $newKey[] = array_shift($line);
-        // print_r($newKey);
         $newLine[] = array_shift($line);
     }
     $newArray = array_combine($newKey, $newLine);
-    // print_r($newArray);
 
     $wordNumbers = [];
 
@@ -26,8 +25,6 @@ function diceware($number) {
         
         $wordNumbers[] = implode($random);
     }
-    // print_r($wordNumbers);
-
 
     $words = [];
     foreach ($wordNumbers as $key => $wordNum) {
@@ -38,7 +35,6 @@ function diceware($number) {
 }
 
 if ($argc == 1) {
-
     fwrite(STDOUT, 'How long of a passphrase do you need? ');
     $length = trim(fgets(STDIN));
 } else {
