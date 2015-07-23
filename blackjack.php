@@ -92,11 +92,11 @@ function echoHand($hand, $name, $hidden = false) {
             }
         }
         $hiddenOutput = $handOutput;
-        for ($i = 2; $i < count($hiddenOutput); $i++){
+        for ($i = 1; $i < count($hiddenOutput); $i++){
             $hiddenOutput[$i] = "[???]";
         }
         $hiddenOutput = implode('', $hiddenOutput);
-        $handTotal = "[???]";
+        $handTotal = "???";
 
         $output = "$name ==================" . PHP_EOL . "$hiddenOutput       Total: $handTotal" . PHP_EOL;
         return $output;        
@@ -104,7 +104,6 @@ function echoHand($hand, $name, $hidden = false) {
         foreach ($hand as $card) {
             foreach ($card as $value) {
                 $handOutput[] = "[$value]"; 
-                
             }
             // print_r($handOutput);
         }
@@ -139,9 +138,52 @@ $playerOutput = echoHand($player, 'Player', false);
 echo $playerOutput;
 
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
-// while ( todo ) {
-//   // todo
-// }
+$decision = '';
+while (getHandTotal($player) <= 21 && $decision != 's') {
+    // while ($decision != 's') {
+        fwrite(STDOUT, "(H)it or (S)tay? " . PHP_EOL);
+        $decision = strtolower(trim(fgets(STDIN)));
+        if ($decision == 'h') {
+            drawCard($player, $deck);
+            echo echoHand($dealer, 'Dealer', true);
+            echo echoHand($player, 'Player', false) . PHP_EOL;
+        }
+}
+
+if (getHandTotal($player) <= 21) {
+    while (getHandTotal($dealer) <= 17) {
+        if (getHandTotal($dealer) < 17) {
+            drawCard($dealer,$deck);
+            echo echoHand($dealer, 'Dealer', true);
+            echo echoHand($player, 'Player', false) . PHP_EOL;         
+        }
+    } 
+}
+
+    
+
+if (getHandTotal($player) > 21) {
+    echo echoHand($dealer, 'Dealer', false);
+    echo echoHand($player, 'Player', false) . PHP_EOL;
+    echo 'BUST!' . PHP_EOL;
+} elseif (getHandTotal($dealer) > 21 && getHandTotal($player) <= 21) {
+    echo echoHand($dealer, 'Dealer', false);
+    echo echoHand($player, 'Player', false) . PHP_EOL;
+    echo 'YOU WIN, DEALER BUSTED!' . PHP_EOL;
+} elseif (getHandTotal($player) > getHandTotal($dealer)) {
+    echo echoHand($dealer, 'Dealer', false);
+    echo echoHand($player, 'Player', false) . PHP_EOL;
+    echo 'YOU WIN!' . PHP_EOL;
+} elseif (getHandTotal($player) < getHandTotal($dealer)) {
+    echo echoHand($dealer, 'Dealer', false);
+    echo echoHand($player, 'Player', false) . PHP_EOL;
+    echo 'YOU LOSE!' . PHP_EOL;
+} elseif (getHandTotal($player) == getHandTotal($dealer)) {
+    echo echoHand($dealer, 'Dealer', false);
+    echo echoHand($player, 'Player', false) . PHP_EOL;
+    echo 'TIE!' . PHP_EOL;
+}
+
 
 // show the dealer's hand (all cards)
 // todo
