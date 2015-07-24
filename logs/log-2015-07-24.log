@@ -1,0 +1,4 @@
+2015-07-24   11:41:07   [INFO] This is an info message.
+2015-07-24   11:41:26   [INFO] This is an info message.
+2015-07-24   11:41:26   [INFO] Here's some info that I'm logging
+2015-07-24   11:41:26   [ERROR] Here's an error!
