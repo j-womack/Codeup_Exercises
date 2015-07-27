@@ -44,6 +44,7 @@ function cardIsAce($card) {
 // numeric cards are worth their value
 function getCardValue($card) {
     if (key($card) == 'A'){
+
         return 11;
     }
     if (key($card) == 'K' || key($card) == 'Q' || key($card) == 'J') {
@@ -63,6 +64,13 @@ function getHandTotal($hand) {
         $handArray[] = $cardValue;
     }
     $handTotal = array_sum($handArray);
+
+    if (in_array(11, $handArray) && $handTotal > 21) {
+        $aces = array_count_values($handArray);
+        $numOfAces = $aces['11'];
+        $handTotal -= ($numOfAces * 10);
+    }
+
     return $handTotal;
 }
 
@@ -139,10 +147,13 @@ echo $playerOutput;
 
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
 $decision = '';
-while (getHandTotal($player) <= 21 && $decision != 's') {
-    // while ($decision != 's') {
+while ($decision != 's' && getHandTotal($player) <= 21) {
+
         fwrite(STDOUT, "(H)it or (S)tay? " . PHP_EOL);
         $decision = strtolower(trim(fgets(STDIN)));
+        if ($decision == 's') {
+            break;
+        }
         if ($decision == 'h') {
             drawCard($player, $deck);
             echo echoHand($dealer, 'Dealer', true);
@@ -151,11 +162,14 @@ while (getHandTotal($player) <= 21 && $decision != 's') {
 }
 
 if (getHandTotal($player) <= 21) {
-    while (getHandTotal($dealer) <= 17) {
+    while (getHandTotal($dealer) < 18) {
         if (getHandTotal($dealer) < 17) {
             drawCard($dealer,$deck);
             echo echoHand($dealer, 'Dealer', true);
             echo echoHand($player, 'Player', false) . PHP_EOL;         
+        }
+        if (getHandTotal($dealer) >= 17) {
+            break;
         }
     } 
 }
